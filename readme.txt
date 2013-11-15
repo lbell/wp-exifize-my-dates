@@ -48,9 +48,9 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 == Changelog ==
 
 = 1.0 =
-After a year of safe use on many blogs, I declare this plugin stable! (Or if anyone has had issues, they sure haven't talked to me about it)
-
-Note - some needed housecleaning might deactivate this plugin upon update. Since it doesn't do anything automatic... Should be no worries. Just re-activate and go on your merry way.
+* After a year of safe use on many blogs, I declare this plugin stable! (Or if anyone has had issues, they sure haven't talked to me about it)
+* Tested to WP 3.7.1 
+* Note - some needed housecleaning might deactivate this plugin upon update. Since it doesn't do anything automatic... Should be no worries. Just re-activate and go on your merry way.
 
 = 0.1 =
 First release
