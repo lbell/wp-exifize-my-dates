@@ -65,7 +65,7 @@ echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
 echo "Ignoring github specific files and deployment script"
-svn propset svn:ignore "deploy.sh
+svn propset svn:ignore "wp-deploy.sh
 README.md
 .git
 .gitignore" "$SVNPATH/trunk/"
