@@ -27,7 +27,6 @@ License: GPL2
 	- Add tag includer/excluder
 	- Add other exifizing goodies (tags)
 */
-// TEST
 
 add_action( 'admin_menu', 'exifize_date_menu' );
 function exifize_date_menu() {
