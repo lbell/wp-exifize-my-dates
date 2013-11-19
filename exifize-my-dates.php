@@ -3,7 +3,7 @@
 Plugin Name: EXIFize My Dates
 Plugin URI: http://wordpress.org/extend/plugins/exifize-my-dates/
 Description: Photoblog plugin to change the published dates of a selected post type to the EXIF:capture_date of the Featured or 1st attached image of the post.
-Version: 1.0
+Version: 1.1
 Author: LBell
 Author URI: http://twitter.com/lbell
 License: GPL2
@@ -34,17 +34,21 @@ function exifize_date_menu() {
 }
 
 function exifize_my_dates() {
-	?>
-	
+	?>	
 	<div class="">
 		<h1>EXIFize My Dates</h1>
 		
 	<?php
 	
 	if(isset($_POST['submit']) && $_POST['ptype'] != 'none') {
-		$ptype = $_POST['ptype'];
-		exifizer_nuclear_option($ptype);
-	} 
+		// Check nonce if we are asked to do something...
+		if( check_admin_referer('exifize_my_dates_nuclear_nonce') ){
+			$ptype = $_POST['ptype'];
+			exifizer_nuclear_option($ptype);
+		} else {
+			wp_die( 'What are you doing, Dave? (Invalid Request)' );
+		}
+	}
 	
 	$args=array(
 		'public'   => true,
@@ -68,6 +72,10 @@ function exifize_my_dates() {
 		
 		<p>Choose the post type who's dates you want to change:</p>
 		<form name="input" action="<?php $_SERVER['PHP_SELF'];?>" method="post">
+			<?php
+			if ( function_exists('wp_nonce_field') ) wp_nonce_field('exifize_my_dates_nuclear_nonce'); 
+			?>
+			
 			<select name="ptype">
 				<option value="none">None</option>
 				<?php
@@ -88,6 +96,9 @@ function exifize_my_dates() {
 
 
 function exifizer_nuclear_option($ptype){
+	if ( ! current_user_can( 'manage_options' ) )
+		wp_die( 'What are you doing, Dave? (Insufficient Capability)' );
+
 	echo "<h2>Working...</h2>";
 
 	$args = array( 
