@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: EXIF, date, photoblog, custom, post, bulk,
 Requires at least: 3.0
 Tested up to: 4.8.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,9 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 
 
 == Changelog ==
+
+= 1.2 =
+* Tested with WP 4.8
 
 = 1.1 =
 * Added security features to keep others from meddl'n with your affairs
