@@ -1,9 +1,6 @@
 <?php
 class MySettingsPage
 {
-    /**
-     * Holds the values to be used in the fields callbacks
-     */
     private $options;
 
     /**
