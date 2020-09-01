@@ -1,13 +1,13 @@
 # Plugin Name
 
-Contributors: LBell
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
-Tags: EXIF, date, photoblog, custom, post, bulk-date-change
-Requires at least: 3.0
-Tested up to: 5.5
-Stable tag: 1.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+- Contributors: LBell
+- Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
+- Tags: EXIF, date, photoblog, custom, post, bulk-date-change
+- Requires at least: 3.0
+- Tested up to: 5.5
+- Stable tag: 1.4
+- License: GPLv2 or later
+- License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Photoblog plugin to bulk change the published dates of a selected post type to the EXIF:capture_date of the Featured or 1st attached image of the post.
 
@@ -48,24 +48,24 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 
 ## Changelog
 
-### 1.4 =
+### 1.4
 
 - Tested with WP 5.5
 
-### 1.3 =
+### 1.3
 
 - Tested with WP 4.8
 
-### 1.1 =
+### 1.1
 
 - Added security features to keep others from meddl'n with your affairs
 
-### 1.0 =
+### 1.0
 
 - After a year of safe use on many blogs, I declare this plugin stable! (Or if anyone has had issues, they sure haven't talked to me about it)
 - Tested to WP 3.7.1
 - Note - some needed housecleaning might deactivate this plugin upon update. Since it doesn't do anything automatic... Should be no worries. Just re-activate and go on your merry way.
 
-### 0.1 =
+### 0.1
 
-First release
+- First release
