@@ -40,23 +40,31 @@ function exifize_my_dates() {
 
 	<?php
 
+  // Get Post Types
+  $args=array(
+    'public'   => true,
+    //'_builtin' => false
+  );
+  $output = 'objects';
+  $operator = 'and';
+  $post_types = get_post_types($args,$output,$operator);
+  $types_list = array();
+  foreach ($post_types  as $post_type ){
+    if($post_type->name != 'attachment') $types_list[] = $post_type->name;
+  }
+  
 	if(isset($_POST['submit']) && $_POST['ptype'] != 'none') {
-		// Check nonce if we are asked to do something...
-		if( check_admin_referer('exifize_my_dates_nuclear_nonce') ){
-			$ptype = $_POST['ptype'];
+    $ptype = sanitize_text_field( $_POST['ptype'] );
+
+    // Check nonce if we are asked to do something...
+		if( check_admin_referer('exifize_my_dates_nuclear_nonce') && in_array( $ptype, $types_list ) ){
 			exifizer_nuclear_option($ptype);
 		} else {
 			wp_die( 'What are you doing, Dave? (Invalid Request)' );
 		}
 	}
 
-	$args=array(
-		'public'   => true,
-		//'_builtin' => false
-	);
-	$output = 'objects';
-	$operator = 'and';
-	$post_types = get_post_types($args,$output,$operator);
+
 	?>
 
 		<p>This tool will attempt to <em>irreversably</em> change the <em>actual</em> post date of Post Type selected below.
@@ -111,112 +119,114 @@ function exifizer_nuclear_option($ptype){
 
 	foreach($allposts as $post) : setup_postdata($post);
 
-		$exifdate = 'none'; //safety
-		$postid = $post->ID;
-		$posttitle = $post -> post_title;
-		$postdate = $post -> post_date;
-		$metadate = trim(get_post_meta($postid, 'exifize_date', true));
-		$pediturl = get_admin_url() . "post.php?post=" . $postid . "&action=edit";
+		$exif_date = 'none'; //safety
+		$post_id = $post->ID;
+		$post_title = $post -> post_title;
+		$post_date = $post -> post_date;
+		$meta_date = trim(get_post_meta($post_id, 'exifize_date', true));
+		$post_edit_url = get_admin_url() . "post.php?post=" . $post_id . "&action=edit";
 
-		echo "<p>Processing " . $ptype . " <a href = \"". $pediturl . "\" title=\"Edit " . $ptype . " \">" . $postid . ": \"" . $posttitle . "\"</a> ";
+		echo "<p>Processing " . $ptype . " <a href = \"". $post_edit_url . "\" title=\"Edit " . $ptype . " \">" . $post_id . ": \"" . $post_title . "\"</a> ";
 
-		if($metadate && $metadate != ''){ 								//If custome meta `efize_date` is set, use it
-			switch ($metadate){
-			case date('Y-m-d H:i:s', strtotime($metadate)):  //check for correct date format
-				$exifdate = $metadate;
-				$exifdetails = "exifize_date custom meta";
+    //If custom meta `exifize_date` is set, use it
+    if($meta_date && $meta_date != ''){ 								
+			switch ($meta_date){
+			case date('Y-m-d H:i:s', strtotime($meta_date)):
+				$exif_date = $meta_date;
+				$exif_details = "exifize_date custom meta";
 				break;
 			case 'skip':
-				$exifdate = 'skip';
+				$exif_date = 'skip';
 				break;
 			default:
-				$exifdate = 'badmeta';
-			}
+				$exif_date = 'badmeta';
+      }
+    // Otherwise, try to get the featured image id
 		}else{
-			$attachid = get_post_thumbnail_id($postid);	// First, try to get the featured image id
-
-			if($attachid){
-				$exifdetails = "Featured Image";
-				$attachname = get_post( $attachid )->post_title;
-			}else{										// if no featured image id, then get first attached
-				$attachargs = array(
-					'post_parent' => $postid,
+			$attach_id = get_post_thumbnail_id($post_id);	
+			if($attach_id){
+				$exif_details = "Featured Image";
+        $attach_name = get_post( $attach_id )->post_title;
+      // if no featured image id, then get first attached
+			}else{										
+				$attach_args = array(
+					'post_parent' => $post_id,
 					'post_type'   => 'attachment',
 					'numberposts' => 1,
 					'post_status' => 'any',
 				);
 
-				$attachment = get_posts($attachargs);
+				$attachment = get_posts($attach_args);
 
 				if($attachment){
-					$attachid = $attachment[0]->ID;
-					$attachname = $attachment[0]->post_name;
-					$exifdetails = "attached image";
+					$attach_id = $attachment[0]->ID;
+					$attach_name = $attachment[0]->post_name;
+					$exif_details = "attached image";
 				} else {
-					$exifdetails = "What are you doing, Dave?";
+					$exif_details = "What are you doing, Dave?";
 				}
 			} // end if no featured image
 
 
 
-			if(!$attachid){
-				$exifdate = "none";  // No attachment or thumbnail ID found
+			if(!$attach_id){
+				$exif_date = "none";  // No attachment or thumbnail ID found
 			} else {
-				echo "using EXIF date from " . $exifdetails . " id ". $attachid . ": \"" . $attachname . "\"</p>";
+				echo "using EXIF date from " . $exif_details . " id ". $attach_id . ": \"" . $attach_name . "\"</p>";
 
-				$imgmeta = wp_get_attachment_metadata($attachid, false);
+				$img_meta = wp_get_attachment_metadata($attach_id, false);
 
-				if($imgmeta && $imgmeta['image_meta']['created_timestamp'] != 0){			//use EXIF date if not 0
-					$exifdate = date("Y-m-d H:i:s", $imgmeta['image_meta']['created_timestamp']);
+				if($img_meta && $img_meta['image_meta']['created_timestamp'] != 0){			//use EXIF date if not 0
+					$exif_date = date("Y-m-d H:i:s", $img_meta['image_meta']['created_timestamp']);
 				} else {
-					$exifdate = 'badexif';
+					$exif_date = 'badexif';
 				}
 			}// end get EXIF date
-		}// end no metadate
+		}// end no meta_date
 
 		// if we have image meta and it is not 0 then...
 
-		switch ($exifdate){
+		switch ($exif_date){
 		case 'skip':
-			$exifexcuse = __("SKIP: 'exifize_date' meta is set to 'skip'");
-			$exifexclass = "updated";
+			$exif_excuse = __("SKIP: 'exifize_date' meta is set to 'skip'");
+			$excuse_class = "updated";
 			break;
 		case 'none':
-			$exifexcuse = __("SKIP: No attachment, featured image, or 'exifize_date' meta found");
-			$exifexclass = "updated";
+			$exif_excuse = __("SKIP: No attachment, featured image, or 'exifize_date' meta found");
+			$excuse_class = "updated";
 			break;
 		case 'badexif':
-			$exifexcuse = __("SKIP: WARNING - image EXIF date missing or can't be read");
-			$exifexclass = "error";
+			$exif_excuse = __("SKIP: WARNING - image EXIF date missing or can't be read");
+			$excuse_class = "error";
 			break;
 		case 'badmeta':
-			$exifexcuse = __("SKIP: WARNING - 'exifize_date' custom meta is formatted wrong: ") . $metadate;
-			$exifexclass = "error";
+			$exif_excuse = __("SKIP: WARNING - 'exifize_date' custom meta is formatted wrong: ") . $meta_date;
+			$excuse_class = "error";
 			break;
-		case $postdate:
-			$exifexcuse = __("Already EXIFized!");
-			$exifexclass = "updated \" style=\" background:none ";
+		case $post_date:
+			$exif_excuse = __("Already EXIFized!");
+			$excuse_class = "updated \" style=\" background:none ";
 			break;
 		default:
 			$update_post = array(
-				'ID' => $postid,
-				'post_date' => $exifdate,
-				'post_date_gmt' => $exifdate,
+				'ID' => $post_id,
+				'post_date' => $exif_date,
+				'post_date_gmt' => $exif_date,
 				//'edit_date' => true,
 			);
 
 			$howditgo = wp_update_post($update_post);
 
 			if($howditgo != 0){
-				$exifexcuse = "Post " . $howditgo . " EXIFIZED! using " . $exifdetails . " date: " . $exifdate . " " ;
-				$exifexclass = "updated highlight";
+				$exif_excuse = "Post " . $howditgo . " EXIFIZED! using " . $exif_details . " date: " . $exif_date . " " ;
+				$excuse_class = "updated highlight";
 			}else{
-				$exifexcuse = "ERROR... something went wrong... with " . $postid .". You might get that checked out.";
-				$exifexclass = "error highlight";
+				$exif_excuse = "ERROR... something went wrong... with " . $post_id .". You might get that checked out.";
+				$excuse_class = "error highlight";
 			} //end howditgo
 		} //end switch
 
-		echo "<div class=\"" . $exifexclass . "\"><p>" . $exifexcuse . "</p></div>";
+		echo "<div class=\"" . $excuse_class . "\"><p>" . $exif_excuse . "</p></div>";
 
 	endforeach;
 
