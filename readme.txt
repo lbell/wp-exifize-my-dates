@@ -1,14 +1,15 @@
-=== Plugin Name ===
+=== EXIFize My Dates ===
 Contributors: LBell
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
-Tags: EXIF, date, photoblog, custom, post, bulk-date-change
-Requires at least: 3.0
-Tested up to: 5.5
-Stable tag: 1.5
+Tags: EXIF, date, photoblog, custom post type, bulk edit, photography
+Requires at least: 5.0
+Tested up to: 6.7
+Requires PHP: 7.4
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Photoblog plugin to bulk change the published dates of a selected post type to the EXIF:capture_date of the Featured or 1st attached image of the post.
+Photoblog plugin to bulk change the published dates of a selected post type to the EXIF capture date of the Featured or first attached image.
 
 == Description ==
 
@@ -47,6 +48,19 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 
 == Changelog ==
 
+= 2.0.0 =
+* Major code refactoring for better maintainability
+* Split code into organized file structure
+* Improved WordPress coding standards compliance
+* Enhanced security with proper escaping and sanitization
+* Added proper internationalization support
+* Improved admin UI with better styling
+* Fixed GMT date calculation for post updates
+* Added plugin action link for quick access
+
+= 1.5.1 =
+* Tested to WP 6.9
+
 = 1.4 =
 * Tested with WP 5.5
 
@@ -57,9 +71,8 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 * Added security features to keep others from meddl'n with your affairs
 
 = 1.0 =
-* After a year of safe use on many blogs, I declare this plugin stable! (Or if anyone has had issues, they sure haven't talked to me about it)
+* After a year of safe use on many blogs, I declare this plugin stable!
 * Tested to WP 3.7.1
-* Note - some needed housecleaning might deactivate this plugin upon update. Since it doesn't do anything automatic... Should be no worries. Just re-activate and go on your merry way.
 
 = 0.1 =
-First release
+* First release

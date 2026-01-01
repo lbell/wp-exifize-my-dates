@@ -1,0 +1,157 @@
+/**
+ * EXIFize My Dates - Admin Styles
+ *
+ * @package Exifize_My_Dates
+ * @since   2.0.0
+ */
+
+/* Wrapper */
+.exifize-wrap {
+  max-width: 800px;
+}
+
+/* Intro section */
+.exifize-intro {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  border-left: 4px solid #72aee6;
+  padding: 12px 16px;
+  margin: 20px 0;
+}
+
+.exifize-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* Priority list */
+.exifize-priority {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.exifize-priority h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.exifize-priority ol {
+  margin-bottom: 0;
+}
+
+.exifize-priority code {
+  background: #f0f0f1;
+  padding: 2px 6px;
+}
+
+/* Form */
+.exifize-form {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.exifize-form .form-table th {
+  padding-left: 0;
+}
+
+.exifize-form select {
+  min-width: 200px;
+}
+
+/* Meta info section */
+.exifize-meta-info {
+  background: #f6f7f7;
+  border: 1px solid #c3c4c7;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.exifize-meta-info h2 {
+  margin-top: 0;
+}
+
+.exifize-meta-info code {
+  background: #fff;
+  padding: 2px 6px;
+}
+
+.exifize-meta-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Donate section */
+.exifize-donate {
+  padding: 10px 0;
+  color: #646970;
+  font-style: italic;
+}
+
+/* Results section */
+.exifize-results {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.exifize-results h2:first-child {
+  margin-top: 0;
+}
+
+/* Individual post result */
+.exifize-post-result {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f1;
+}
+
+.exifize-post-result:last-of-type {
+  border-bottom: none;
+}
+
+.exifize-post-result .exifize-processing {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+}
+
+.exifize-post-result .exifize-processing a {
+  text-decoration: none;
+}
+
+.exifize-post-result .exifize-processing a:hover {
+  text-decoration: underline;
+}
+
+/* Notice styles within results */
+.exifize-post-result .notice {
+  margin: 0;
+  padding: 8px 12px;
+}
+
+.exifize-post-result .notice p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Inline notice styling fix */
+.exifize-post-result .notice.inline {
+  display: block;
+}
+
+/* Success highlight */
+.exifize-post-result .notice-success {
+  border-left-color: #00a32a;
+  background: #edfaef;
+}
+
+/* Results footer */
+.exifize-results hr {
+  margin: 20px 0;
+}
+
+.exifize-results ol {
+  margin-bottom: 20px;
+}

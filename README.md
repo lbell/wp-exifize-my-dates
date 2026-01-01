@@ -5,7 +5,7 @@
 - Tags: EXIF, date, photoblog, custom, post, bulk-date-change
 - Requires at least: 3.0
 - Tested up to: 5.5
-- Stable tag: 1.5
+- Stable tag: 1.5.1
 - License: GPLv2 or later
 - License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,9 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 ## Screenshots
 
 ## Changelog
+### 1.5.1
+- Tested to WP 6.9
+
 
 ### 1.4
 
