@@ -5,7 +5,7 @@ Tags: EXIF, metadata, photo, date, photoblog
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable Tag: 1.6.1
+Stable Tag: 1.6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Update Post Dates from Image Metadata (EXIF) in WordPress. Great for photoblogs.
@@ -52,7 +52,7 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 
 
 == Changelog ==
-= 1.6.1 =
+= 1.6.2 =
 * Version bump
 
 = 1.6.0 =
