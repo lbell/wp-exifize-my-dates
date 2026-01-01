@@ -4,7 +4,7 @@
  * Plugin Name: EXIFize My Dates
  * Plugin URI:  https://wordpress.org/plugins/exifize-my-dates/
  * Description: Photoblog plugin to change the published dates of a selected post type to the EXIF capture date of the Featured or first attached image.
- * Version:     2.0.0
+ * Version:     1.6.0
  * Author:      LBell
  * Author URI:  https://lorenbell.com
  * License:     GPL-2.0+
@@ -22,7 +22,7 @@ if (! defined('ABSPATH')) {
 /**
  * Plugin constants.
  */
-define('EXIFIZE_VERSION', '2.0.0');
+define('EXIFIZE_VERSION', '1.6.0');
 define('EXIFIZE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('EXIFIZE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('EXIFIZE_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -57,7 +57,7 @@ add_action('admin_menu', 'exifize_admin_menu');
 /**
  * Enqueue admin CSS and JS.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_enqueue_admin_assets() {
   wp_enqueue_style(
@@ -71,7 +71,7 @@ function exifize_enqueue_admin_assets() {
 /**
  * Add settings link to plugins page.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param array $links Existing plugin action links.
  * @return array Modified plugin action links.

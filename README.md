@@ -4,8 +4,8 @@
 - Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
 - Tags: EXIF, date, photoblog, custom, post, bulk-date-change
 - Requires at least: 3.0
-- Tested up to: 5.5
-- Stable tag: 1.5.1
+- Tested up to: 6.9
+- Stable tag: 1.6.0
 - License: GPLv2 or later
 - License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,14 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 ## Screenshots
 
 ## Changelog
+
+### 1.6.0
+* Added: support for Gutenberg editor
+* Added: internationalization support
+* Improved: Better admin styling
+* Improved: Major code refactoring for better maintainability
+* Improved: security 
+
 ### 1.5.1
 - Tested to WP 6.9
 

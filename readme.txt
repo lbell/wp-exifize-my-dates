@@ -3,9 +3,9 @@ Contributors: LBell
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
 Tags: EXIF, date, photoblog, custom post type, bulk edit, photography
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,15 +48,12 @@ Post on the Wordpress.org forums would be your best bet - so others can benefit 
 
 == Changelog ==
 
-= 2.0.0 =
-* Major code refactoring for better maintainability
-* Split code into organized file structure
-* Improved WordPress coding standards compliance
-* Enhanced security with proper escaping and sanitization
-* Added proper internationalization support
-* Improved admin UI with better styling
-* Fixed GMT date calculation for post updates
-* Added plugin action link for quick access
+= 1.6.0 =
+* Added: support for Gutenberg editor
+* Added: internationalization support
+* Improved: Better admin styling
+* Improved: Major code refactoring for better maintainability
+* Improved: security 
 
 = 1.5.1 =
 * Tested to WP 6.9

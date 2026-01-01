@@ -4,7 +4,7 @@
  * Adds a panel in the post sidebar for managing post dates via EXIF data.
  *
  * @package Exifize_My_Dates
- * @since   2.0.0
+ * @since   1.6.0
  */
 
 (function (wp) {

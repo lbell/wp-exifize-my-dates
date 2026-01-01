@@ -4,7 +4,7 @@
  * Core EXIF processing functions.
  *
  * @package Exifize_My_Dates
- * @since   2.0.0
+ * @since   1.6.0
  */
 
 // Exit if accessed directly.
@@ -53,7 +53,7 @@ function exifize_process_posts($post_type) {
 /**
  * Process a single post and update its date.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param WP_Post $post      The post object.
  * @param string  $post_type The post type being processed.
@@ -94,7 +94,7 @@ function exifize_process_single_post($post, $post_type) {
 /**
  * Determine which date to use for a post.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param int    $post_id   The post ID.
  * @param string $meta_date The exifize_date meta value, if any.
@@ -141,7 +141,7 @@ function exifize_determine_date($post_id, $meta_date) {
 /**
  * Parse the exifize_date meta value.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param string $meta_date The meta date value.
  * @return array Array with 'date', 'source', and 'status' keys.
@@ -177,7 +177,7 @@ function exifize_parse_meta_date($meta_date) {
 /**
  * Get the first attached image for a post.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param int $post_id The post ID.
  * @return WP_Post|null The attachment post or null.
@@ -198,7 +198,7 @@ function exifize_get_first_attachment($post_id) {
 /**
  * Get the EXIF date from an attachment.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param int $attachment_id The attachment ID.
  * @return array Array with 'date', 'source', and 'status' keys.
@@ -226,7 +226,7 @@ function exifize_get_attachment_date($attachment_id) {
  *
  * Centralized messages for all status codes to ensure consistent translations.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param array $date_result The result from exifize_determine_date().
  * @return array Array with 'message' and 'class' keys.
@@ -276,7 +276,7 @@ function exifize_get_status_message($date_result) {
 /**
  * Apply the determined date to a post.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param int    $post_id     The post ID.
  * @param string $post_date   The current post date.
@@ -329,7 +329,7 @@ function exifize_apply_date($post_id, $post_date, $date_result) {
 /**
  * Render the results footer with troubleshooting info.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_render_results_footer() {
 ?>

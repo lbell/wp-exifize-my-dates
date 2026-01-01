@@ -6,7 +6,7 @@
  * Registers the exifize_date meta field and enqueues the editor script.
  *
  * @package Exifize_My_Dates
- * @since   2.0.0
+ * @since   1.6.0
  */
 
 // Exit if accessed directly.
@@ -17,7 +17,7 @@ if (! defined('ABSPATH')) {
 /**
  * Register the exifize_date meta field for all public post types.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_register_meta() {
   $post_types = get_post_types(array('public' => true), 'names');
@@ -43,7 +43,7 @@ add_action('init', 'exifize_register_meta');
 /**
  * Enqueue the block editor script.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_enqueue_editor_assets() {
   $asset_file = EXIFIZE_PLUGIN_DIR . 'assets/js/editor.asset.php';
@@ -86,7 +86,7 @@ add_action('enqueue_block_editor_assets', 'exifize_enqueue_editor_assets');
  *
  * Runs the same logic as the bulk tool: checks meta override first, then EXIF.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_ajax_apply_date() {
   // Verify nonce.
@@ -138,7 +138,7 @@ add_action('wp_ajax_exifize_apply_date', 'exifize_ajax_apply_date');
 /**
  * AJAX handler to save the exifize_date meta.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_ajax_save_meta() {
   // Verify nonce.
@@ -172,7 +172,7 @@ add_action('wp_ajax_exifize_save_meta', 'exifize_ajax_save_meta');
 /**
  * AJAX handler to clear the exifize_date meta.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_ajax_clear_meta() {
   // Verify nonce.
@@ -203,7 +203,7 @@ add_action('wp_ajax_exifize_clear_meta', 'exifize_ajax_clear_meta');
 /**
  * AJAX handler to get the current exifize_date meta value.
  *
- * @since 2.0.0
+ * @since 1.6.0
  */
 function exifize_ajax_get_meta() {
   // Verify nonce.

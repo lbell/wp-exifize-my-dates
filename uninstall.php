@@ -7,7 +7,7 @@
  * It cleans up any data stored by the plugin.
  *
  * @package Exifize_My_Dates
- * @since   2.0.0
+ * @since   1.6.0
  */
 
 // Exit if not called by WordPress uninstall.

@@ -4,7 +4,7 @@
  * Admin page rendering functions.
  *
  * @package Exifize_My_Dates
- * @since   2.0.0
+ * @since   1.6.0
  */
 
 // Exit if accessed directly.
@@ -15,7 +15,7 @@ if (! defined('ABSPATH')) {
 /**
  * Get available post types for EXIFizing.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @return array Array of post type objects.
  */
@@ -70,7 +70,7 @@ function exifize_render_admin_page() {
 /**
  * Render the admin form.
  *
- * @since 2.0.0
+ * @since 1.6.0
  *
  * @param array $post_types Array of available post type objects.
  */
