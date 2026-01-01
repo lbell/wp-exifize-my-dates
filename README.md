@@ -1,7 +1,7 @@
 # Plugin Name
 
 - Contributors: LBell
-- Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
+- Donate link: https://github.com/sponsors/lbell 
 - Tags: EXIF, date, photoblog, 
 - Requires at least: 3.0
 - Tested up to: 6.9
