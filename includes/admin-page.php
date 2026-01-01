@@ -81,10 +81,14 @@ function exifize_render_form($post_types) {
 
     <div class="exifize-intro">
       <p>
-        <?php esc_html_e('This tool will attempt to irreversibly change the actual post date of the selected post type.', 'exifize-my-dates'); ?>
+        <strong><?php esc_html_e('Bulk Change Tool', 'exifize-my-dates'); ?></strong> —
+        <?php esc_html_e('This tool will attempt to irreversibly change the actual post dates of all posts of the selected post type.', 'exifize-my-dates'); ?>
       </p>
       <p class="description">
-        <?php esc_html_e('Note: Since this changes the actual post date, if you are using dates in your permalink structure, this will change them, possibly breaking incoming links.', 'exifize-my-dates'); ?>
+        <?php esc_html_e('For case-by-case changes, use the EXIFize Date Override panel in the Gutenberg post editor.', 'exifize-my-dates'); ?>
+      </p>
+      <p class="description">
+        <?php esc_html_e('⚠️ Warning: Since this changes the actual post date, if you are using dates in your permalink structure, this will change them, possibly breaking incoming links.', 'exifize-my-dates'); ?>
       </p>
     </div>
 
@@ -123,7 +127,7 @@ function exifize_render_form($post_types) {
         </tr>
       </table>
 
-      <?php submit_button(__('EXIFize Dates', 'exifize-my-dates'), 'primary', 'exifize_submit'); ?>
+      <?php submit_button(__('Bulk EXIFize All Posts', 'exifize-my-dates'), 'primary', 'exifize_submit'); ?>
     </form>
 
     <div class="exifize-meta-info">
