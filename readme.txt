@@ -13,10 +13,9 @@ Update Post Dates from Image Metadata (EXIF) in WordPress. Great for photoblogs.
 
 == Description ==
 
-Update the post dates of your WordPress posts, pages, or custom post types based on the EXIF metadata of your images. 
-Can be done in bulk (via Tools) or one at a time (via Edit Post screen).
+Update the post dates of your WordPress posts, pages, or custom post types based on the EXIF metadata of your images. Can be done in bulk (via Tools) or one at a time (via Edit Post screen).
 
- Perfect for photoblogs where you want the post date to reflect when the photo was actually taken, rather than when it was uploaded.  
+Perfect for photoblogs where you want the post date to reflect when the photo was actually taken, rather than when it was uploaded.
 
 The dates will be changed using (in order of priority):
 
