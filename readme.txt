@@ -1,6 +1,6 @@
 === EXIFize My Dates ===
 Contributors: LBell
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
+Donate link: https://github.com/sponsors/lbell 
 Tags: EXIF, metadata, photo, date, photoblog
 Requires at least: 5.0
 Tested up to: 6.9
@@ -8,7 +8,6 @@ Requires PHP: 7.4
 Stable Tag: 1.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
 Update Post Dates from Image Metadata (EXIF) in WordPress. Great for photoblogs.
 
 == Description ==

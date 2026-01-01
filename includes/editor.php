@@ -46,7 +46,7 @@ add_action('init', 'exifize_register_meta');
  * @since 1.6.0
  */
 function exifize_enqueue_editor_assets() {
-  $asset_file = EXIFIZE_PLUGIN_DIR . 'assets/js/editor.asset.php';
+  $asset_file = EXIFIZE_PLUGIN_DIR . 'public/js/editor.asset.php';
 
   // Use default dependencies if asset file doesn't exist.
   if (file_exists($asset_file)) {
@@ -60,7 +60,7 @@ function exifize_enqueue_editor_assets() {
 
   wp_enqueue_script(
     'exifize-editor',
-    EXIFIZE_PLUGIN_URL . 'assets/js/editor.js',
+    EXIFIZE_PLUGIN_URL . 'public/js/editor.js',
     $asset['dependencies'],
     $asset['version'],
     true

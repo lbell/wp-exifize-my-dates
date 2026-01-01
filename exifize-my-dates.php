@@ -62,7 +62,7 @@ add_action('admin_menu', 'exifize_admin_menu');
 function exifize_enqueue_admin_assets() {
   wp_enqueue_style(
     'exifize-admin',
-    EXIFIZE_PLUGIN_URL . 'assets/css/admin.css',
+    EXIFIZE_PLUGIN_URL . 'public/css/admin.css',
     array(),
     EXIFIZE_VERSION
   );

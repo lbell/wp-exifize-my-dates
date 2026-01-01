@@ -101,57 +101,78 @@
   margin-top: 0;
 }
 
-/* Individual post result */
-.exifize-post-result {
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #f0f0f1;
+.exifize-results .notice {
+  margin-bottom: 20px;
 }
 
-.exifize-post-result:last-of-type {
+/* Success results */
+.exifize-results .success {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.exifize-results .success strong {
+  color: #0c5620;
+}
+
+/* Error results */
+.exifize-results .error {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.exifize-results .error strong {
+  color: #491217;
+}
+
+/* Info results */
+.exifize-results .info {
+  background: #d1ecf1;
+  border: 1px solid #bee5eb;
+  color: #0c5460;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.exifize-results .info strong {
+  color: #062c33;
+}
+
+/* Item list */
+.exifize-item-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exifize-item-list li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e4e7;
+}
+
+.exifize-item-list li:last-child {
   border-bottom: none;
 }
 
-.exifize-post-result .exifize-processing {
-  margin: 0 0 8px 0;
-  font-size: 13px;
-}
-
-.exifize-post-result .exifize-processing a {
-  text-decoration: none;
-}
-
-.exifize-post-result .exifize-processing a:hover {
-  text-decoration: underline;
-}
-
-/* Notice styles within results */
-.exifize-post-result .notice {
-  margin: 0;
-  padding: 8px 12px;
-}
-
-.exifize-post-result .notice p {
-  margin: 0;
-  padding: 0;
-}
-
-/* Inline notice styling fix */
-.exifize-post-result .notice.inline {
+.exifize-item-list strong {
   display: block;
+  margin-bottom: 4px;
+  color: #1d2d3d;
 }
 
-/* Success highlight */
-.exifize-post-result .notice-success {
-  border-left-color: #00a32a;
-  background: #edfaef;
+.exifize-item-list .meta {
+  font-size: 0.9em;
+  color: #646970;
 }
 
-/* Results footer */
-.exifize-results hr {
-  margin: 20px 0;
-}
-
-.exifize-results ol {
-  margin-bottom: 20px;
+/* Spinner */
+.exifize-spinner {
+  display: inline-block;
+  margin-left: 8px;
 }
