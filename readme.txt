@@ -1,7 +1,7 @@
 === EXIFize My Dates ===
 Contributors: LBell
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BTMZ87DJDYBPS
-Tags: EXIF, date, photoblog, custom post type, bulk edit, photography
+Tags: EXIF, metadata, photo, date, photoblog
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -9,25 +9,32 @@ Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Photoblog plugin to bulk change the published dates of a selected post type to the EXIF capture date of the Featured or first attached image.
+Update Post Dates from Image Metadata (EXIF) in WordPress. Great for photoblogs.
 
 == Description ==
 
-This tool will attempt to irreversably change the actual post dates of all entries in the post type you choose (supports posts, pages, and custom post types).
+Update the post dates of your WordPress posts, pages, or custom post types based on the EXIF metadata of your images. 
+Can be done in bulk (via Tools) or one at a time (via Edit Post screen).
+
+ Perfect for photoblogs where you want the post date to reflect when the photo was actually taken, rather than when it was uploaded.  
 
 The dates will be changed using (in order of priority):
 
-1. 'exifize_date' custom meta (date or 'skip')**
+1. Custom date of your choice (date or 'skip')**
 2. EXIF date of Featured Image
 3. EXIF date of the first attached image
-4. Do nothing. Be nothing.
 
-**You can override the function with a custom meta field named: 'exifize_date' which accepts dates: 'YYYY-MM-DD hh:mm:ss' (for example: '2012-06-23 14:07:00') or 'skip' to prevent the EXIFizer from making any changes.
+**You can override the function with a custom meta field named: 'exifize_date' which accepts:
+ - 'YYYY-MM-DD hh:mm:ss' (for example: '2012-06-23 14:07:00')
+ - 'skip' (to prevent the EXIFizer from making any changes.)
+
+
 == Installation ==
 
 1. Upload the `/exifize-my-dates/` directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Navigate to 'EXIFize Dates' under the 'Tools' menu
+1. Change post dates one at a time via the 'Edit Post' screen
+1. Bulk change dates using 'EXIFize Dates' under the 'Tools' menu
 
 == Frequently Asked Questions ==
 
